@@ -45,27 +45,35 @@ const ItemsList = ({onEdit}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {items.map((item, index) => (
-                        <tr key={item.id}>
-                            <td>{index + 1}</td>
-                            <td>{item.name}</td>
-                            <td>{item.stock}</td>
-                            <td>
-                                <button 
-                                    className='btn btn-sm btn-warning me-2' 
-                                    onClick={() => onEdit(item)}
-                                >
-                                    Edit
-                                </button>
-                                <button 
-                                    className='btn btn-sm btn-danger' 
-                                    onClick={() => handleDelete(item.id)}
-                                >
-                                    Delete
-                                </button>
+                    {items.length === 0 ? (
+                        <tr>
+                            <td colSpan="4" className="text-center text-muted py-2">
+                                Tidak Ada Data Yang Ditemukan
                             </td>
                         </tr>
-                    ))}
+                    ) : (
+                        items.map((item, index) => (
+                            <tr key={item.id}>
+                                <td>{index + 1}</td>
+                                <td>{item.name}</td>
+                                <td>{item.stock}</td>
+                                <td>
+                                    <button 
+                                        className='btn btn-sm btn-warning me-2' 
+                                        onClick={() => onEdit(item)}
+                                    >
+                                        Edit
+                                    </button>
+                                    <button 
+                                        className='btn btn-sm btn-danger' 
+                                        onClick={() => handleDelete(item.id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        ))
+                    )}
                 </tbody>
             </table>
         </div>
