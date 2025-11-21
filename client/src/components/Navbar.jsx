@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Form, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Navbar as BSNavbar, Nav, Container, Button } from "react-bootstrap";
 import { AuthContext } from "../context/AuthContext";
 
@@ -23,6 +23,7 @@ const Navbar = () => {
                         {user? (
                             <>
                                 <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
+                                <Nav.Link as={Link} to="/items">Items</Nav.Link>
                                 <Nav.Link className="text-light">Halo, {user.username}</Nav.Link>
                                 <Button variant="outline-light" size="sm" onClick={handleLogout}>
                                     Logout

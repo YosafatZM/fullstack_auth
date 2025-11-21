@@ -3,6 +3,7 @@ const cors = require('cors');
 const { sequelize } = require('./models');
 
 const authRoute = require('./routes/authRoute');
+const itemRoute = require('./routes/itemRoute');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/auth', authRoute);
+app.use('/items', itemRoute); 
 
 const PORT = 3000;
 
