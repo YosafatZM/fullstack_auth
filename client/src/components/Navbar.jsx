@@ -24,6 +24,7 @@ const Navbar = () => {
                             <>
                                 <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                                 <Nav.Link as={Link} to="/items">Items</Nav.Link>
+                                <Nav.Link as={Link} to="/lagu">Lagu</Nav.Link>
                                 <Nav.Link className="text-light">Halo, {user.username}</Nav.Link>
                                 <Button variant="outline-light" size="sm" onClick={handleLogout}>
                                     Logout

@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ItemsPage from "./pages/ItemsPage";
+import LaguPage from "./pages/LaguPage";
 
 function App() {
 
@@ -26,6 +27,11 @@ function App() {
           <Route path="/items" element={
             <PrivateRoute>
               <ItemsPage />
+            </PrivateRoute>
+          } />
+          <Route path="/lagu" element={
+            <PrivateRoute>
+              <LaguPage />
             </PrivateRoute>
           } />
         </Routes>
